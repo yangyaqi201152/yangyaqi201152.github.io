@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>极地海洋馆</title>
+        <style>
+            h1{
+                color:rgb(94, 153, 241);
+                font-size: 100px;  /*字体大小*/
+                text-align:center;  /*水平居中*/
+                margin-top: -25px;  /*上边距*/
+            }
+            html{
+                background:url(image/Underwater.png);
+                height:900px;
+                background-size:cover;
+            }
+            .animal:hover{
+                transition:transform 0.5s;  /*变化时间*/
+                transform:scale(1.2)/*缩放*/
+            }
+            .text{
+                font-size: 50px;
+                position:absolute;
+                top:50%;
+                left:40%;
+                background-color:rgb(48, 32, 155);
+                color:rgb(255, 255, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>极地海洋馆欢迎您</h1>
+        <div>
+            <a>
+                <img src="image/starfish-a.png"
+                    class="animal"
+                    onclick="show('这是一个海星')"
+                    onmouseout="hide()"/>
+            </a>
+            <a>
+                <img src="image/shark2-a.png"
+                    class="animal"
+                    onclick="show('这是一条鲨鱼')"
+                    onmouseout="hide()"/>
+                
+            </a>
+            <a>
+                <img src="image/crab-a.png"
+                    class="animal"
+                    onclick="show('这是一只螃蟹')"
+                    onmouseout="hide()"/>
+            </a>
+        </div>
+        <div id="info" class="text" style="display:none;">
+        </div>
+        <script>
+            function show(mes){
+                const info=document.getElementById('info');
+                info.textContent=mes;
+                info.style.display='block';
+            }
+            function hide(){
+                const info=document.getElementById('info');
+                info.style.display='none';
+            }
+        </script>
+    </body>
+</html>
